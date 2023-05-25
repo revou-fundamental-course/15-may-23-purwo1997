@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Space+Mono&display=swap">
+    <link rel="icon" type="image/x-icon" href="image/favicon.ico">
+    <title>Katik</title>
+</head>
+<body>
+    <header>
+        <h1><span class="title">KATIK Kalkulator Matematik</span></h1>
+    </header>
+    <main>
+        <div class="card">
+            <div class="contenthead">
+                <h1 class="contenthead">Welcome to Katik</h1>
+                <p>Hai sobat, Selamat datang di Katik <br>
+                Sebuah web apps sederhana yang berfungsi untuk menghitung luas dan keliling bangun datar</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a class="active" id="square-link">Persegi</a></li>
+                    <li><a id="rectangle-link">Persegi Panjang</a></li>
+                </ul>
+            </nav>
+            <div id="page-square" class="container active">
+                <div class="panel">
+                    <div class="panel-head">
+                        <h2>Luas Persegi</h2>
+                    </div>
+                    <div class="panel-content">
+                        <p><img src="image/square.jpg" alt="Square" class="figure"></p>
+                        <p class="text-left">Rumus Luas Persegi yaitu :</p>
+                        <p>
+                            <strong>L = S x S</strong>
+                        </p>
+                        <p class="text-left">Di mana :<br>
+                        L = Luas<br>
+                        S = Sisi</p>
+                    </div>
+                    <div class="panel-foot">
+                        <h2>Hitung Luas Persegi</h2>
+                        <p>
+                            <input  id="sisi-luas" name="sisi-luas" placeholder="Nilai Sisi" required 
+                            oninput="validateNumericInput(this)">
+                        </p>
+                        <div id="output-luas" name="output-luas">
+                            <p class="text-left">L = S x S<br>
+                            L = <span id="rumus-luas"></span><br>
+                            L = <span id="result-luas"></span></p>
+                        </div>   
+                        <p>
+                            <button name="hitung-luas" onclick="hitungLuas()">Hitung</button>
+                        </p>
+                        <p class="text-right">
+                            <input type="reset" name="reset-luas" onclick="resetLuas(0)">
+                        </p>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="panel-head">
+                        <h2>Keliling Persegi</h2>
+                    </div>
+                    <div class="panel-content">
+                        <p><img src="image/square.jpg" alt="Square" class="figure"></p>
+                        <p class="text-left">Rumus Keliling Persegi yaitu :</p>
+                        <p>
+                            <strong>K = S x 4</strong>
+                        </p>
+                        <p class="text-left">Di mana :<br>
+                        K = Keliling<br>
+                        S = Sisi</p>
+                    </div>
+                    <div class="panel-foot">
+                        <h2>Hitung Keliling Persegi</h2>
+                        <p>
+                            <input id="sisi-keliling" name="sisi-keliling" placeholder="Nilai Sisi" required 
+                            oninput="validateNumericInput(this)">
+                        </p>
+                        <div id="output-keliling" name="output-keliling">
+                            <p class="text-left">K = S x 4<br>
+                            K = <span id="rumus-keliling"></span><br>
+                            K = <span id="result-keliling"></span></p>
+                        </div>   
+                        <p>
+                            <button name="hitung-keliling" onclick="hitungKeliling()">Hitung</button>
+                        </p>
+                        <p class="text-right">
+                            <input type="reset" name="reset-keliling" onclick="resetKeliling(0)">
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div id="page-rectangle" class="container">
+                <div class="panel">
+                    <div class="panel-head">
+                        <h2>Luas Persegi Panjang</h2>
+                    </div>
+                    <div class="panel-content">
+                        <p><img src="image/rectangle.jpg" alt="Rectangle" class="figure"></p>
+                        <p class="text-left">Rumus Luas Persegi Panjang yaitu :</p>
+                        <p>
+                            <strong>L = p x l</strong>
+                        </p>
+                        <p class="text-left">Di mana :<br>
+                        L = Luas<br>
+                        p = Panjang<br>
+                        l = Lebar</p>
+                    </div>
+                    <div class="panel-foot">
+                        <h2>Hitung Luas Persegi Panjang</h2>
+                        <p>
+                            <input  id="panjang-luas" name="panjang-luas" placeholder="Nilai Panjang" required 
+                            oninput="validateNumericInput(this)">
+                            <input  id="lebar-luas" name="lebar-luas" placeholder="Nilai Lebar" required 
+                            oninput="validateNumericInput(this)">
+                        </p>
+                        <div id="output-luas-r" name="output-luas-r">
+                            <p class="text-left">L = p x l<br>
+                            L = <span id="rumus-luas-r"></span><br>
+                            L = <span id="result-luas-r"></span></p>
+                        </div>   
+                        <p>
+                            <button name="hitung-luas-r" onclick="hitungLuasRectangle()">Hitung</button>
+                        </p>
+                        <p class="text-right">
+                            <input type="reset" name="reset-luas-r" onclick="resetLuasRectangle(0)">
+                        </p>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="panel-head">
+                        <h2>Keliling Persegi Panjang</h2>
+                    </div>
+                    <div class="panel-content">
+                        <p><img src="image/rectangle.jpg" alt="Rectangle" class="figure"></p>
+                        <p class="text-left">Rumus Keliling Persegi Panjang yaitu :</p>
+                        <p>
+                            <strong>K = 2 x (p + l)</strong>
+                        </p>
+                        <p class="text-left">Di mana :<br>
+                        K = Keliling<br>
+                        p = Panjang<br>
+                        l = Lebar</p>
+                    </div>
+                    <div class="panel-foot">
+                        <h2 style="font-size: 21px; margin: 21px 0;">Hitung Keliling Persegi Panjang</h2>
+                        <p>
+                            <input id="panjang-keliling" name="panjang-keliling" placeholder="Nilai Panjang" required 
+                            oninput="validateNumericInput(this)">
+                            <input id="lebar-keliling" name="lebar-keliling" placeholder="Nilai Lebar" required 
+                            oninput="validateNumericInput(this)">
+                        </p>
+                        <div id="output-keliling-r" name="output-keliling-r">
+                            <p class="text-left">K = 2 x (p + l)<br>
+                            K = <span id="rumus-keliling-r"></span><br>
+                            K = <span id="result-keliling-r"></span></p>
+                        </div>   
+                        <p>
+                            <button name="hitung-keliling-r" onclick="hitungKelilingRectangle()">Hitung</button>
+                        </p>
+                        <p class="text-right">
+                            <input type="reset" name="reset-keliling" onclick="resetKelilingRectangle(0)">
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
